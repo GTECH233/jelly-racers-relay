@@ -1,0 +1,6 @@
+; Tiny project for the Jelly Racers online relay server (see relay.gd and HOSTING.md).
+config_version=5
+
+[application]
+
+config/name="Jelly Racers Relay"
