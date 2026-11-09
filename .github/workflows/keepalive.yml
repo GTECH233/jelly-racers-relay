@@ -1,0 +1,13 @@
+# Keeps the free Render relay awake: visits it every 10 minutes so the
+# first player of the day doesn't wait ~50 s for it to start up.
+name: keep relay awake
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping the relay
+        run: curl -s -o /dev/null --max-time 60 https://jelly-racers-relay.onrender.com/ || true
